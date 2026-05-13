@@ -42,6 +42,8 @@ img { max-width: 100%; }
 .motion-card:hover { transform: translateY(-4px); box-shadow: 0 22px 44px rgba(8,42,90,.14); border-color: #B9D8FF; }
 .map-marker > span { transition: transform .18s ease, box-shadow .18s ease; }
 .map-marker:hover > span { transform: scale(1.12); }
+.reveal-motion { opacity: 0; transform: translateY(26px) scale(.985); filter: blur(6px); transition: opacity .68s ease, transform .68s cubic-bezier(.2,.8,.2,1), filter .68s ease; will-change: opacity, transform, filter; }
+.reveal-motion.is-visible { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
 .hero-copy { animation: hero-copy-enter .62s cubic-bezier(.2,.8,.2,1) both; }
 .hero-visual { animation: hero-visual-enter .72s cubic-bezier(.2,.8,.2,1) .08s both; }
 .hero-orbit { animation: hero-orbit-drift 12s ease-in-out infinite; transform-origin: center; }
@@ -75,7 +77,7 @@ img { max-width: 100%; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .motion-card, .motion-card:hover, .btn-base, .btn-base:hover, .map-marker > span, .map-marker:hover > span, .hero-copy, .hero-visual, .hero-orbit, .hero-dash, .hero-dash-alt { opacity: 1; filter: none; transform: none; transition: none; animation: none; }
+  .reveal-motion, .reveal-motion.is-visible, .motion-card, .motion-card:hover, .btn-base, .btn-base:hover, .map-marker > span, .map-marker:hover > span, .hero-copy, .hero-visual, .hero-orbit, .hero-dash, .hero-dash-alt { opacity: 1; filter: none; transform: none; transition: none; animation: none; }
 }
 
 @media (max-width: 768px) {
