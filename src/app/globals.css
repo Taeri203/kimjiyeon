@@ -42,10 +42,40 @@ img { max-width: 100%; }
 .motion-card:hover { transform: translateY(-4px); box-shadow: 0 22px 44px rgba(8,42,90,.14); border-color: #B9D8FF; }
 .map-marker { transition: transform .18s ease; }
 .map-marker:hover { transform: translate(-50%, -50%) scale(1.12); }
+.hero-copy { animation: hero-copy-enter .62s cubic-bezier(.2,.8,.2,1) both; }
+.hero-visual { animation: hero-visual-enter .72s cubic-bezier(.2,.8,.2,1) .08s both; }
+.hero-orbit { animation: hero-orbit-drift 12s ease-in-out infinite; transform-origin: center; }
+.hero-dash { animation: hero-dash-flow 9s ease-in-out infinite; }
+.hero-dash-alt { animation: hero-dash-flow-alt 11s ease-in-out infinite; }
+
+@keyframes hero-copy-enter {
+  from { opacity: 0; transform: translateY(22px); filter: blur(6px); }
+  to { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+
+@keyframes hero-visual-enter {
+  from { opacity: 0; transform: translateY(18px) scale(.97); filter: blur(8px); }
+  to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+}
+
+@keyframes hero-orbit-drift {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(-10px, 8px, 0); }
+}
+
+@keyframes hero-dash-flow {
+  0%, 100% { stroke-dashoffset: 0; }
+  50% { stroke-dashoffset: 22; }
+}
+
+@keyframes hero-dash-flow-alt {
+  0%, 100% { stroke-dashoffset: 0; }
+  50% { stroke-dashoffset: -18; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .motion-card, .motion-card:hover, .btn-base, .btn-base:hover, .map-marker, .map-marker:hover { transform: none; transition: none; }
+  .motion-card, .motion-card:hover, .btn-base, .btn-base:hover, .map-marker, .map-marker:hover, .hero-copy, .hero-visual, .hero-orbit, .hero-dash, .hero-dash-alt { opacity: 1; filter: none; transform: none; transition: none; animation: none; }
 }
 
 @media (max-width: 768px) {
