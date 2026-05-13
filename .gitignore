@@ -1,0 +1,9 @@
+﻿node_modules
+.next
+out
+.env*
+.DS_Store
+asset-contact-sheet.jpg
+public/images/KakaoTalk_*
+public/images/*.png
+public/*.pdf
