@@ -5,6 +5,34 @@ import { siteConfig } from "@/data/site";
 
 const keywords = ["의료치유특구", "빈틈없는 돌봄", "다시 뛰는 골목", "낡은 곳은 새롭게", "부족한 곳은 제대로"];
 
+function HeroProfileCard({ className = "" }: { className?: string }) {
+  return (
+    <div className={`hero-visual relative z-10 mx-auto w-full max-w-[min(100%,390px)] md:max-w-[620px] ${className}`}>
+      <div className="absolute -inset-4 rounded-[2.5rem] bg-[#004EA2]/12 blur-3xl md:-inset-8 md:rounded-[3.2rem]" aria-hidden />
+      <div className="relative overflow-hidden rounded-[2rem] border border-[#D7E4FF] bg-white/82 p-2.5 shadow-2xl backdrop-blur md:rounded-[2.75rem] md:p-4">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_72%_18%,rgba(229,57,53,.16),transparent_20%),radial-gradient(circle_at_24%_76%,rgba(255,216,77,.34),transparent_30%),linear-gradient(145deg,#FFFFFF_0%,#EAF4FF_60%,#F8FBFF_100%)]" aria-hidden />
+        <div className="absolute left-4 top-4 z-20 flex flex-wrap gap-2 md:left-6 md:top-6">
+          <span className="inline-flex items-center gap-1 rounded-full bg-[#FFD84D] px-3 py-1 text-xs font-black text-[#082A5A] md:text-sm"><Building2 className="h-3.5 w-3.5 md:h-4 md:w-4" />태전2·구암·국우</span>
+        </div>
+        <ImageWithFallback
+          src={siteConfig.images.profile}
+          alt="대구시의원 후보 김지연 공식 프로필 사진"
+          className="relative z-10 h-[390px] rounded-[1.75rem] bg-transparent sm:h-[430px] md:h-[680px] md:rounded-[2.25rem]"
+          imgClassName="object-contain object-bottom drop-shadow-[0_24px_32px_rgba(8,42,90,0.22)]"
+          sizes="(min-width: 1024px) 560px, 100vw"
+          preset="cutout"
+          withDefaultBg={false}
+          priority
+        />
+        <div className="absolute inset-x-3 bottom-3 z-20 rounded-[1.25rem] border border-white/35 bg-white/92 p-3 shadow-xl backdrop-blur md:inset-x-4 md:bottom-4 md:rounded-[1.5rem] md:p-4">
+          <p className="text-xs font-black text-[#E53935] md:text-sm">{siteConfig.heroTitle}</p>
+          <p className="mt-1 text-sm font-black text-[#082A5A] md:text-lg">{siteConfig.heroSubtitle}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function HeroSection() {
   return (
     <section className="campaign-gradient relative overflow-hidden">
@@ -24,6 +52,7 @@ export function HeroSection() {
             <span className="mt-1 block text-[4rem] leading-none text-[#004EA2] md:mt-2 md:text-[7rem]">김지연</span>
           </h1>
           <p className="mt-3 text-xl font-black text-[#E53935] md:mt-4 md:text-3xl">{siteConfig.mainVision}</p>
+          <HeroProfileCard className="mt-5 lg:hidden" />
           <p className="mt-4 max-w-2xl text-base leading-7 text-[#344054] md:text-lg md:leading-8">
             태전2동·구암동·국우동, 의료와 치유, 돌봄과 골목경제, 정주환경을 다시 설계하겠습니다.
           </p>
@@ -49,29 +78,7 @@ export function HeroSection() {
             ))}
           </div>
         </div>
-        <div className="hero-visual relative z-10 order-1 mx-auto w-full max-w-[min(100%,390px)] md:max-w-[620px] lg:order-2">
-          <div className="absolute -inset-4 rounded-[2.5rem] bg-[#004EA2]/12 blur-3xl md:-inset-8 md:rounded-[3.2rem]" aria-hidden />
-          <div className="relative overflow-hidden rounded-[2rem] border border-[#D7E4FF] bg-white/82 p-2.5 shadow-2xl backdrop-blur md:rounded-[2.75rem] md:p-4">
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_72%_18%,rgba(229,57,53,.16),transparent_20%),radial-gradient(circle_at_24%_76%,rgba(255,216,77,.34),transparent_30%),linear-gradient(145deg,#FFFFFF_0%,#EAF4FF_60%,#F8FBFF_100%)]" aria-hidden />
-            <div className="absolute left-4 top-4 z-20 flex flex-wrap gap-2 md:left-6 md:top-6">
-              <span className="inline-flex items-center gap-1 rounded-full bg-[#FFD84D] px-3 py-1 text-xs font-black text-[#082A5A] md:text-sm"><Building2 className="h-3.5 w-3.5 md:h-4 md:w-4" />태전2·구암·국우</span>
-            </div>
-            <ImageWithFallback
-              src={siteConfig.images.profile}
-              alt="대구시의원 후보 김지연 공식 프로필 사진"
-              className="relative z-10 h-[390px] rounded-[1.75rem] bg-transparent sm:h-[430px] md:h-[680px] md:rounded-[2.25rem]"
-              imgClassName="object-contain object-bottom drop-shadow-[0_24px_32px_rgba(8,42,90,0.22)]"
-              sizes="(min-width: 1024px) 560px, 100vw"
-              preset="cutout"
-              withDefaultBg={false}
-              priority
-            />
-            <div className="absolute inset-x-3 bottom-3 z-20 rounded-[1.25rem] border border-white/35 bg-white/92 p-3 shadow-xl backdrop-blur md:inset-x-4 md:bottom-4 md:rounded-[1.5rem] md:p-4">
-              <p className="text-xs font-black text-[#E53935] md:text-sm">{siteConfig.heroTitle}</p>
-              <p className="mt-1 text-sm font-black text-[#082A5A] md:text-lg">{siteConfig.heroSubtitle}</p>
-            </div>
-          </div>
-        </div>
+        <HeroProfileCard className="hidden lg:order-2 lg:block" />
       </div>
     </section>
   );
