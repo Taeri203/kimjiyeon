@@ -6,7 +6,7 @@ import { mapCategories, mapMarkers } from "@/data/map";
 import type { MapCategory } from "@/types";
 import { cn } from "@/lib/utils";
 
-const colors: Record<string, string> = { 의료치유: "bg-[#E53935]", 돌봄: "bg-[#0072CE]", 골목상권: "bg-[#FFD84D]", 정주환경: "bg-[#0F766E]", 교육: "bg-[#004EA2]", 친수공간: "bg-[#0F766E]", 교통기반: "bg-[#082A5A]", 역사문화: "bg-[#8B5CF6]" };
+const colors: Record<string, string> = { 의료치유: "bg-[#E53935]", 골목상권: "bg-[#FFD84D]", 정주환경: "bg-[#0F766E]", 친수공간: "bg-[#0F766E]", 교통기반: "bg-[#082A5A]", 역사문화: "bg-[#8B5CF6]" };
 
 export function StaticMap({ preview = false }: { preview?: boolean }) {
   void preview;

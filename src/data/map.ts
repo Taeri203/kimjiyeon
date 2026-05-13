@@ -1,6 +1,6 @@
 import type { MapCategory, MapMarker } from "@/types";
 
-export const mapCategories: MapCategory[] = ["전체", "의료치유", "돌봄", "골목상권", "정주환경", "교육", "친수공간", "교통기반", "역사문화"];
+export const mapCategories: MapCategory[] = ["전체", "의료치유", "골목상권", "정주환경", "친수공간", "교통기반", "역사문화"];
 
 export const mapMarkers: MapMarker[] = [
   { title: "칠곡경북대병원", category: "의료치유", area: "구암동", issue: "북구 의료 기반", pledge: "양성자치료센터와 의료치유특구 추진", x: 52, y: 48 },
