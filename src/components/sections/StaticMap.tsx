@@ -9,10 +9,11 @@ import { cn } from "@/lib/utils";
 const colors: Record<string, string> = { 의료치유: "bg-[#E53935]", 돌봄: "bg-[#0072CE]", 골목상권: "bg-[#FFD84D]", 정주환경: "bg-[#0F766E]", 교육: "bg-[#004EA2]", 친수공간: "bg-[#0F766E]", 교통기반: "bg-[#082A5A]", 역사문화: "bg-[#8B5CF6]" };
 
 export function StaticMap({ preview = false }: { preview?: boolean }) {
+  void preview;
   const [category, setCategory] = useState<MapCategory>("전체");
   const [selected, setSelected] = useState(mapMarkers[0]);
   const markers = useMemo(() => category === "전체" ? mapMarkers : mapMarkers.filter((m) => m.category === category), [category]);
-  const shown = preview ? markers.slice(0, 8) : markers;
+  const shown = markers;
 
   return (
     <div className="grid gap-6 lg:grid-cols-[1.05fr_.95fr]">
@@ -36,7 +37,7 @@ export function StaticMap({ preview = false }: { preview?: boolean }) {
         </div>
 
         <div className="relative aspect-[16/11] overflow-hidden rounded-[1.5rem] border border-[#D7E4FF] bg-[#F7FAFF] md:aspect-[16/10]">
-          <svg viewBox="0 0 760 460" className="absolute inset-0 h-full w-full" role="img" aria-label="7시 방향 태전2동, 중앙 구암동, 1시 방향 국우동·도남권을 도형과 3호선 주황색 라인으로 표시한 북구 공약지도">
+          <svg viewBox="0 0 760 460" className="absolute inset-0 h-full w-full" role="img" aria-label="태전2동, 구암동, 국우동·도남권을 도형과 3호선 주황색 라인으로 표시한 북구 공약지도">
             <rect width="760" height="460" fill="#F7FAFF" />
             <circle cx="142" cy="384" r="132" fill="#0F766E" opacity=".10" />
             <circle cx="386" cy="236" r="154" fill="#E53935" opacity=".08" />
@@ -78,9 +79,9 @@ export function StaticMap({ preview = false }: { preview?: boolean }) {
           ))}
 
           <div className="pointer-events-none absolute inset-x-3 bottom-3 grid grid-cols-3 gap-2 md:hidden">
-            <span className="rounded-xl bg-white/86 px-2 py-1 text-center text-xs font-black text-[#082A5A]">7시 태전2동</span>
-            <span className="rounded-xl bg-white/86 px-2 py-1 text-center text-xs font-black text-[#082A5A]">중앙 구암동</span>
-            <span className="rounded-xl bg-white/86 px-2 py-1 text-center text-xs font-black text-[#082A5A]">1시 국우동</span>
+            <span className="rounded-xl bg-white/86 px-2 py-1 text-center text-xs font-black text-[#082A5A]">태전2동</span>
+            <span className="rounded-xl bg-white/86 px-2 py-1 text-center text-xs font-black text-[#082A5A]">구암동</span>
+            <span className="rounded-xl bg-white/86 px-2 py-1 text-center text-xs font-black text-[#082A5A]">국우동</span>
           </div>
         </div>
 
