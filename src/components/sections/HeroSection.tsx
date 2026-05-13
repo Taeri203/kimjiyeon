@@ -48,7 +48,9 @@ export function HeroSection() {
             {siteConfig.party} · 대구시의원 후보 · 북구 제4선거구
           </span>
           <h1 className="mt-4 text-[2.55rem] font-black leading-[1.08] tracking-tight text-[#082A5A] md:mt-5 md:text-6xl lg:text-7xl">
-            <span className="block text-keep">{siteConfig.slogan}</span>
+            <span className="block md:hidden">젊고 준비된,</span>
+            <span className="block md:hidden">일할 줄 아는 사람</span>
+            <span className="hidden text-keep md:block">{siteConfig.slogan}</span>
             <span className="mt-1 block text-[4rem] leading-none text-[#004EA2] md:mt-2 md:text-[7rem]">김지연</span>
           </h1>
           <p className="mt-3 text-xl font-black text-[#E53935] md:mt-4 md:text-3xl">{siteConfig.mainVision}</p>
